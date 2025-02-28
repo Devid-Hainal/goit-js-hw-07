@@ -47,6 +47,7 @@ p {
   margin: 0;
 }
 
+/* #region Task-1 */
 .item {
   display: flex;
   align-items: flex-start;
@@ -83,30 +84,25 @@ p {
   padding-bottom: 8px;
   padding-left: 16px;
 }
+/* #endregion Task-1 */
 
+/* #region Task-2 */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  list-style: none;
-  padding: 0;
+  margin: 100px auto;
+  width: 1128px;
+  row-gap: 48px;
+  column-gap: 24px;
   justify-content: center;
 }
 
 .gallery-item {
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: 360px;
-  text-align: center;
+  width: calc((100% - 2 * 24px) / 3);
 }
 
-.gallery-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+.gallery-img {
+  overflow: hidden;
+  height: 300px;
 }
-
-.gallery-image:hover {
-  transform: scale(1.05);
-}
+/* #endregion Task-2 */
