@@ -4,44 +4,14 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".login-form");
+const changeColorButton = document.querySelector('.change-color');
+const changeColorHandler = () => {
+  const bodyElement = document.querySelector('body');
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  bodyElement.style.backgroundColor = getRandomHexColor();
 
-    const { email, password } = form.elements;
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
+  const textColor = document.querySelector('p .color');
 
-    if (!emailValue || !passwordValue) {
-      alert("All form fields must be filled in");
-      return;
-    }
-
-    const formData = {
-      email: emailValue,
-      password: passwordValue,
-    };
-
-    console.log(formData);
-    form.reset();
-  });
-
-  function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, 0)}`;
-  }
-
-  const changeColorBtn = document.querySelector(".change-color");
-  const colorSpan = document.querySelector(".color");
-
-  if (changeColorBtn && colorSpan) {
-    changeColorBtn.addEventListener("click", () => {
-      const newColor = getRandomHexColor();
-      document.body.style.backgroundColor = newColor;
-      colorSpan.textContent = newColor;
-    });
-  }
-});
+  textColor.textContent = bodyElement.style.backgroundColor;
+};
+changeColorButton.addEventListener('click', changeColorHandler);
