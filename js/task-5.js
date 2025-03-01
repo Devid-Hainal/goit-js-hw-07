@@ -15,3 +15,4 @@ const changeColorHandler = () => {
   textColor.textContent = bodyElement.style.backgroundColor;
 };
 changeColorButton.addEventListener('click', changeColorHandler);
+
